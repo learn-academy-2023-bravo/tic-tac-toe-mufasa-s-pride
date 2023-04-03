@@ -1,12 +1,12 @@
 import React from "react"
 
-const Square = ({ square, index, handleSquares }) => {
-  const handleSquares = () => {
-    console.log(index)
-  }
+const Square = ({ square, index, handleClick }) => {
+  // const handleSquares = () => {
+  //   // console.log(index)
+  // }
   return (
     <>
-      <div className="square" onClick={handleSquares}>
+      <div className="square" onClick={() => handleClick(index)}>
         {square}
       </div>
     </>

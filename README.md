@@ -8,6 +8,42 @@ When creating a project it is important to think about organization of your code
 
 - As a user, I can see a three by three grid game board on the page.
 - As a user, I can click on a square to mark it.
+
+    -  const [squares, setSquares] = useState(Array(9).fill(null))
+  const [xIsNext, setXisNext] = useState(true)
+  const winner = calculateWinner(squares)
+
+  const handleClick = (i) => {
+    const squaresCopy = [...squares]
+  if (winner || squaresCopy[i]) {
+    return (squaresCopy[i] = xIsNext ? "🦁" : "O")
+    setSquares(squaresCopy)
+    setXisNext(!xIsNext)
+  }
+  }
+  function calculateWinner(squares) {
+    const lines = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6],
+    ]
+    for (let i = 0; i < lines.length; i++) {
+      const [a, b, c] = lines[i]
+      if (
+        squares[a] &&
+        squares[a] === squares[b] &&
+        squares[a] === squares[c]
+      ) {
+        return squares[a]
+      }
+    }
+    return null
+  }
 - As a user, my partner can click on a square after me and see their mark.
 - As a user, I can't click on a square that has already been marked.
 - As a user, when either my partner or I win the game (three squares in a row: horizontally, vertically, or diagonally) I can see a notice telling me which player won.

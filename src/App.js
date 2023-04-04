@@ -61,24 +61,28 @@ const App = () => {
   }
   return (
     <>
-      <h1>Tic Tac Toe</h1>
+    <div className="background">
+
+      <h1 className="header">Tic Tac Toe</h1>
+
       <div className="board">
         {squares.map((square, index) => {
           return (
             <Square
-              square={square}
-              index={index}
-              key={index}
-              handleClick={handleClick}
+            square={square}
+            index={index}
+            key={index}
+            handleClick={handleClick}
             />
-          )
-        })}
+            )
+          })}
       </div>
       <div>
         <button className="button" onClick={gameRestart}>
           Play Again
         </button>
       </div>
+    </div>
     </>
   )
 }

@@ -12,4 +12,24 @@
   flex-wrap: wrap;
   width: 610px;
   margin: 0 auto;
+  
+}
+
+.background {
+  background-image: url(https://www.publicdomainpictures.net/pictures/270000/nahled/lion-king-1537188407Ea6.jpg);
+  background-size: cover;
+
+}
+
+.header {
+  text-align: center;
+  border: 2px solid black;
+  margin:auto;
+}
+
+.button {
+  display: block;
+  margin: auto;
+
+
 }

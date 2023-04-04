@@ -4,7 +4,7 @@ import "./App.css"
 
 const App = () => {
   const [squares, setSquares] = useState(Array(9).fill(null))
-  const [turn, setTurn] = useState("X")
+  const [turn, setTurn] = useState("🐗")
   const [winner, setWinner] = useState(null)
 
   const handleClick = (i) => {
@@ -15,7 +15,7 @@ const App = () => {
     newSquares[i] = turn
     setSquares(newSquares)
     setWinner(calculateWinner(newSquares))
-    newSquares[i] = turn === "X" ? "O" : "X"
+    newSquares[i] = turn === "🐗" ? "🦁" : "🐗"
 
     setSquares(newSquares)
     setTurn(newSquares[i])
